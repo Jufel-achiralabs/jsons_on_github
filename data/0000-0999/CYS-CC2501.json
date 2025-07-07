@@ -1,0 +1,86 @@
+{
+  "Version": 5,
+  "Name": "CYS-CC2501",
+  "Light": 1,
+  "AppSetting": {
+    "Test": "Cystatin-C",
+    "Expiry": "2027/03/06",
+    "Unit": "µg/mL",
+    "WalkAway": 15
+  },
+  "AlgSetting": {
+    "TLeftBase": 1,
+    "Normalize": 0
+  },
+  "FindArea": {
+    "ControlAreaOffset": 30,
+    "BandOffset": 60,
+    "BaseOffset": 30,
+    "BandRange": 2,
+    "BaseRange": 5,
+    "TestAreaCount": 1,
+    "FindRange": 2,
+    "ROI": 0
+  },
+  "CutOff": {
+    "Enable": 0,
+    "Formula": 0,
+    "C": 100,
+    "T1": 60,
+    "T2": 60,
+    "T3": 60
+  },
+  "QNT": {
+    "Enable": 1,
+    "Count": 5,
+    "Type": 9,
+    "Point": {
+      "X1": 58,
+      "Y1": 53,
+      "X2": 121,
+      "Y2": 103,
+      "X3": 293,
+      "Y3": 275,
+      "X4": 557,
+      "Y4": 395,
+      "X5": 982,
+      "Y5": 558,
+      "a": -17.34,
+      "b": 1.04,
+      "c": 7.5,
+      "d": 991.63
+    },
+    "Point2": {
+      "X1": 58,
+      "Y1": 53,
+      "X2": 121,
+      "Y2": 103,
+      "X3": 293,
+      "Y3": 275,
+      "X4": 557,
+      "Y4": 395,
+      "X5": 982,
+      "Y5": 558,
+      "a": -17.34,
+      "b": 1.04,
+      "c": 7.5,
+      "d": 991.63
+    },
+    "Point3": {
+      "X1": 58,
+      "Y1": 53,
+      "X2": 121,
+      "Y2": 103,
+      "X3": 293,
+      "Y3": 275,
+      "X4": 557,
+      "Y4": 395,
+      "X5": 982,
+      "Y5": 558,
+      "a": -17.34,
+      "b": 1.04,
+      "c": 7.5,
+      "d": 991.63
+    }
+  }
+}
