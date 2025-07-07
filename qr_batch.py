@@ -7,12 +7,18 @@ from pathlib import Path
 import qrcode, tqdm, subprocess, os
 
 BASE_URL = "https://cdn.jsdelivr.net/gh/jufel-achiralabs/jsons_on_github@master"  # pin later if you tag
-BASE_PATH = r"D:\Jufel\repos\jsons_on_github"
+DATA_DIR = Path("data")
+QR_DIR   = Path("qr")
 
-for p in tqdm.tqdm(list(Path("data").rglob("*.json"))):
-    url = f"{BASE_URL}/{p.as_posix()}"
+all_jsons = list(DATA_DIR.rglob("*.json"))
+
+for json_file in tqdm.tqdm(all_jsons):
+    # Relative path inside 'data/' → like 0000-0999/foo.json
+    rel_path = json_file.relative_to(DATA_DIR)
+    print(rel_path)
+    url = f"{BASE_URL}/{rel_path.as_posix()}"
     print(url)
-    out = Path("qr") / p.with_suffix(".png").name
+    out = QR_DIR / rel_path.with_suffix(".png")
     print(out)
     out.parent.mkdir(parents=True, exist_ok=True)
     qrcode.make(url).save(out)
