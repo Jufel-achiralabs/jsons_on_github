@@ -3,7 +3,7 @@ name: Build QR Codes
 on:
   push:
     paths:
-      - 'data/**.json'     # only run this if JSON files changed
+      - 'data/**.json'
       - '.github/workflows/qr.yaml'
 
 jobs:
@@ -11,13 +11,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4  # clone your repo
+    - uses: actions/checkout@v4
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.x'
-    - run: pip install qrcode[pil] tqdm
-    - run: python qr_batch.py     # regenerate all QR PNGs
+
+    - run: pip install qrcode[pil]
+
+    - run: python qr_batch.py
+
     - name: Commit QR codes
       run: |
         git config user.name "qr-bot"
