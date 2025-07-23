@@ -19,8 +19,7 @@ jobs:
         python-version: '3.x'
 
     - run: pip install qrcode[pil]
-    - run: pip install qrcode[pil] tqdm
-    - run: pip install requests[pil]
+    - run: pip install qrcode[pil] tqdm requests
 
     - run: python qr_batch.py
 
