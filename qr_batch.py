@@ -9,8 +9,8 @@ import requests
 
 
 BASE_URL = "https://cdn.jsdelivr.net/gh/jufel-achiralabs/jsons_on_github@master"  # pin later if you tag
-DATA_DIR = Path("data")
-QR_DIR   = Path("qr")
+DATA_DIR = Path("./data")
+QR_DIR   = Path("./qr")
 MANIFEST_PATH = Path("short_urls.json")
 
 # Load old manifest if it exists (to avoid re-shortening same links)
@@ -65,7 +65,7 @@ for json_file in tqdm.tqdm(all_jsons):
         }
 
     QR_DIR.mkdir(parents=True, exist_ok=True)
-    
+
     out = QR_DIR / rel_path.with_suffix(".png")
     print("QR Path:", out)
     out.parent.mkdir(parents=True, exist_ok=True)
