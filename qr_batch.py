@@ -64,8 +64,10 @@ for json_file in tqdm.tqdm(all_jsons):
             "short_url": short_url
         }
 
+    QR_DIR.mkdir(parents=True, exist_ok=True)
+    
     out = QR_DIR / rel_path.with_suffix(".png")
-    print("🖼  QR Path:", out)
+    print("QR Path:", out)
     out.parent.mkdir(parents=True, exist_ok=True)
 
     qr = qrcode.QRCode(
